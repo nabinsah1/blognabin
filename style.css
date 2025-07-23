@@ -1,0 +1,126 @@
+
+main {
+  padding: 70px 20px;
+  margin-bottom: 30px; /* creates visual gap before footer */
+}#button{
+   
+  background-color: black;
+  color: white;
+  padding: 15px 30px; /* around 50px total width visually */
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+ transform: translate(-50%, -50%);
+}
+button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+    header{
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    }
+    .navbar {position: fixed;   /* stay at top even on scroll */
+  top: 0;
+  left: 0;
+  padding: 10px;
+  background-color: white;  /* or transparent if you want */
+  display: flex;
+  gap: 10px;   /* space between buttons */
+  align-items: center;
+  /* optional width */
+    }
+    footer {
+  background-color: rgba(0, 0, 0, 0.05); /* light shady background */
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+/* Top section: blog on left, contact on right */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /* responsive on smaller screens */
+}
+
+/* Left content */
+#blogcontent {
+  width: 48%;
+}
+
+/* Right content */
+ 
+
+/* Bottom section centered */
+.footer-bottom {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+/* Contact section aligned right */
+#contact {
+  width: 48%;
+  text-align: right;
+}
+
+/* Icons inside contact aligned in a row */
+.contact-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Common icon styling */
+#contact img {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#contact img:hover {
+  transform: scale(1.1);
+}
+.navbar li {
+  list-style: none; /* remove bullet points */
+}
+.navbar li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+.navbar li a:hover {
+  background-color: #f0f0f0; /* light gray on hover */
+  color: #000; /* darker text on hover */
+}
