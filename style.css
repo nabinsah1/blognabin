@@ -1,12 +1,31 @@
+ /* GLOBAL STYLES */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
 
+/* MAIN SECTION */
 main {
-  padding: 70px 20px;
-  margin-bottom: 30px; /* creates visual gap before footer */
-}#button{
-   
+  padding: 70px 5%;
+  margin-bottom: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* BUTTON */
+#button {
   background-color: black;
   color: white;
-  padding: 15px 30px; /* around 50px total width visually */
+  padding: 15px 30px;
   border: none;
   border-radius: 8px;
   font-size: 16px;
@@ -16,78 +35,89 @@ main {
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
-   position: absolute;
-   top: 50%;
-   left: 50%;
- transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
 }
-button:hover {
+
+#button:hover {
   background-color: #333;
   transform: scale(1.05);
 }
-    header{
-    background-color: #f8f9fa;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative; 
-    z-index: 1000;
-    font-family: Arial, sans-serif;
-    color: #333;
-    font-size: 24px;
-    font-weight: bold;
-    }
-    .navbar {position: fixed;   /* stay at top even on scroll */
+
+/* HEADER */
+header {
+  background-color: #f8f9fa;
+  padding: 20px 5%;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
   top: 0;
   left: 0;
-  padding: 10px;
-  background-color: white;  /* or transparent if you want */
+  padding: 10px 5%;
+  background-color: white;
   display: flex;
-  gap: 10px;   /* space between buttons */
+  gap: 15px;
   align-items: center;
-  /* optional width */
-    }
-    footer {
-  background-color: rgba(0, 0, 0, 0.05); /* light shady background */
-  padding: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar li a:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+/* FOOTER */
+footer {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 20px 5%;
   width: 100%;
   box-sizing: border-box;
   color: #222;
-  font-family: Arial, sans-serif;
 }
 
-/* Top section: blog on left, contact on right */
 .footer-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  flex-wrap: wrap; /* responsive on smaller screens */
+  flex-wrap: wrap;
 }
 
-/* Left content */
-#blogcontent {
-  width: 48%;
-}
-
-/* Right content */
- 
-
-/* Bottom section centered */
-.footer-bottom {
-  margin-top: 15px;
-  text-align: center;
-  font-size: 13px;
-  color: #555;
-  border-top: 1px solid #ccc;
-  padding-top: 10px;
-}
-/* Contact section aligned right */
+#blogcontent,
 #contact {
   width: 48%;
+  min-width: 280px;
+}
+
+#contact {
   text-align: right;
 }
 
-/* Icons inside contact aligned in a row */
 .contact-icons {
   display: flex;
   justify-content: flex-end;
@@ -96,7 +126,6 @@ button:hover {
   margin-top: 10px;
 }
 
-/* Common icon styling */
 #contact img {
   width: 30px;
   height: 30px;
@@ -108,19 +137,68 @@ button:hover {
 #contact img:hover {
   transform: scale(1.1);
 }
-.navbar li {
-  list-style: none; /* remove bullet points */
+
+.footer-bottom {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
 }
-.navbar li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  padding: 8px 16px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  font-family: Arial, sans-serif;
+
+/* RESPONSIVENESS */
+
+/* For tablets */
+@media (max-width: 768px) {
+  header {
+    font-size: 1.5rem;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #blogcontent,
+  #contact {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-icons {
+    justify-content: center;
+  }
+
+  #button {
+    font-size: 14px;
+    padding: 12px 24px;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
 }
-.navbar li a:hover {
-  background-color: #f0f0f0; /* light gray on hover */
-  color: #000; /* darker text on hover */
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  header {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .navbar li a {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  #button {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
 }
